@@ -13,7 +13,7 @@ const CountriesRouter = () =>{
             setCountry(country)
         }
         countryDataAPI()
-     }, [])
+     },)
 
     return (
         <div className="container">
