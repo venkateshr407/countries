@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+
+:root {
+    --dark-bg-color: rgb(16, 16, 17);
+    --light-bg-color: rgb(255, 255, 255);
+    --light-text-color: rgb(233, 233, 233);
+    --dark-text-color: rgb(128, 128, 128);
+    --grid-dark-bg-color: rgb(0, 0, 0);
+    --header-light-bg: rgb(226, 226, 226);
+    --grid-light-bg-color: rgb(216, 216, 216);
+}
+body.light-theme {
+    background-color: var(--light-bg-color);
+    color: var(--grid-dark-bg-color);
+    transition: background-color 0.3s;
+}
+body {
+    background-color: var(--dark-bg-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--light-bg-color);
+    transition: background-color 0.3s;
+}
+.back {
+    margin-bottom: 3rem;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+    max-width: 100%;
+}
+.filter {
+    display: flex;
+    flex-direction: column;
+}
+.search {
+    margin-bottom: 3rem;
+}
+.filter .form-contro {
+    margin-bottom: 2em;
+}
+.filter .form-contro input {
+    background-color: var(--dark-bg-color);
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: inherit;
+    width: 100%;
+}
+.filter .form-contro input::placeholder {
+    color: var(--dark-text-color);
+}
+.filter .form-contro input.light-theme {
+    background-color: var(--header-light-bg);
+}
+.filter .form-contro input::placeholder.light-theme {
+    color: var(--light-text-color);
+}
+.filter .region-filter {
+    width: auto;
+}
+.filter .region-filter select {
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+}
+.filter .region-filter select.light-theme {
+    background-color: var(--header-light-bg);
+    color: var(--dark-text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--dark-bg-color);
+}
+.header.light-theme {
+    background-color: var(--header-light-bg);
+    color: var(--dark-text-color);
+}
+.head h2 {
+    font-weight: 900;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.grids {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+.grids article img {
+    border-radius: 5px 5px 0 0;
 }
 
-.App-link {
-  color: #61dafb;
+.grids .details {
+    background-color: var(--dark-bg-color);
+    padding: 20px;
+    margin-top: -10px;
+    box-shadow: 0 5px 5px rgba(36, 36, 36, 0.801);
+    border-radius: 0 0 5px 5px;
+}
+.grids .details.light-theme {
+    background-color: var(--light-bg-color);
+}
+.grids .details h3 {
+    margin: 10px 0 10px 0;
+    font-weight: 900;
+}
+.grids .details h4 {
+    font-size: 1.2em;
+}
+.grids .details span {
+    font-size: 1rem;
+    color: var(--dark-text-color);
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.more,
+.remove,
+.back {
+    background-color: rgb(36, 36, 36);
+    padding: 5px;
+    outline: none;
+    border: none;
+    transition: ease-in-out 0.1s;
+    color: lightgrey;
+    border-radius: 5px;
+    font-size: 0.7em;
+}
+.more:hover {
+    background-color: rgb(0, 153, 255);
+    text-decoration: none;
+    color: cornsilk;
+}
+.remove:hover {
+    background-color: rgb(255, 0, 0);
+    text-decoration: none;
+    color: cornsilk;
+}
+.back:hover {
+    background-color: rgb(0, 255, 0);
+    text-decoration: none;
+    color: cornsilk;
+}
+.countryData h3 {
+    margin: 3rem 0 0 1rem;
+    font-weight: 900;
+}
+
+.countryData h4 {
+    margin: 1rem;
+    font-size: 1.2em;
+}
+.countryData span {
+    margin-left: 0.5rem;
+    font-size: 0.9em;
+    color: rgb(143, 143, 143);
+}
+.gridData {
+    margin: 3rem 0 3rem 0;
+}
+.para p {
+    color: rgb(143, 143, 143);
+}
+.gridData img {
+    border-radius: 5px;
+}
+@media (min-width: 640px) {
+    .grids {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 768px) {
+    .filter .form-contro {
+        width: auto;
+    }
+    .filter {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .grids {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .header .filter .grids {
+        padding: 20px 100px;
+    }
+    .grids .details h3 {
+        font-size: 1.5em;
+        font-weight: 900;
+    }
+    .grids .details h4 {
+        font-size: 0.9em;
+    }
+    .grids .details span {
+        font-size: 0.8rem;
+    }
+    .gridData {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .countryData {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 2rem;
+    }
+    .countryData h3 {
+        margin: 1rem 0 1rem 0;
+    }
+    .countryData h4 {
+        margin: 1px 0 0 10px;
+        font-size: 1.2em;
+        padding: 0.5em 0 0 0;
+    }
+}
+@media (min-width: 990px) {
+    .grids {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .header .filter .grids {
+        padding: 20px 100px;
+    }
+    .countryData h4 {
+        margin: 1px 0 0 10px;
+        font-size: 1.2em;
+    }
+    .gridData img {
+        max-width: 70%;
+    }
 }
