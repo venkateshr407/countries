@@ -1,4 +1,5 @@
 import React from 'react'
+
 const Header = () => {
     const changeTheme = () => {
         const moon = document.querySelector('.fa-moon')
@@ -11,8 +12,6 @@ const Header = () => {
             details.forEach((detail) => {
                 detail.classList.toggle('light-theme')
             })
-            
-
         })
     }
     return (
@@ -23,7 +22,9 @@ const Header = () => {
                 </div>
                 <div>
                     <i className="fas fa-moon" onClick={() => changeTheme()}></i>
+
                 </div>
+
             </header>
         </div>
     )

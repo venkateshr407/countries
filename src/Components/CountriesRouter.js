@@ -17,7 +17,7 @@ const CountriesRouter = () =>{
 
     return (
         <div className="container">
-            <Link to='/' className="back">Back to home</Link>
+            <Link to='/' className="back link">Back to home</Link>
             <div className="mt-4">
                 {country.map((c) => {
                     const {numericCode, flag, name, nativeName, population, region,callingCodes, languages, capital,borders ,topLevelDomain, currencies, subregion} = c
@@ -29,7 +29,8 @@ const CountriesRouter = () =>{
                                 <h2>{subregion} </h2>
                             </div>
                             <div className="gridData">
-                                <img src={flag} alt={name}/>                  
+                                <img src={flag} alt={name}/>  
+                                                
                             <div className="countryData">
                                 <div className="countryName"><h3>{name} </h3></div><br/>
                                     <h4>Population: <span>{population}</span></h4>
@@ -44,6 +45,7 @@ const CountriesRouter = () =>{
                                     <h4>Border's: <span>{borders[0]}</span></h4>
                                     <h4>Country Code: <span>{callingCodes[0]}</span></h4>
                                 </div>
+                                
                             </div>
                         </article>
                     )
