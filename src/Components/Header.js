@@ -18,7 +18,7 @@ const Header = () => {
         <div className="headerBG">
             <header className="container header">
                 <div className="head">
-                    <h2>World is here!</h2>
+                    <a href='/'>World is here!</a>
                 </div>
                 <div>
                     <i className="fas fa-moon" onClick={() => changeTheme()}></i>

@@ -32,7 +32,8 @@ const removeCountry = (numericCode) =>{
                         <div>
                             <img src={flag} alt={name}/>
                             <div className="details">
-                                <h3>{name}</h3>
+                                <div className="country-name">
+                                <h3 >{name}</h3>
                                 <h4>Population: <span>{population}</span></h4>
                                 <h4>Region: <span>{region}</span></h4>
                                 <h4>Capital: <span>{capital}</span></h4>
@@ -40,6 +41,7 @@ const removeCountry = (numericCode) =>{
                                     <Link to={`/${name}`} className="more ">Learn More</Link>
                                     <button className="remove" onClick={() => removeCountry(numericCode)}>Remove</button>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </article>

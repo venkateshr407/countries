@@ -42,15 +42,15 @@ img {
 }
 .filter .form-contro input {
     background-color: var(--dark-bg-color);
-    border: none;
-    outline: none;
+    border: 5px #fff;
     padding: 10px;
     border-radius: 5px;
     font-family: inherit;
+    color: rgb(219, 219, 219);
     width: 100%;
 }
 .filter .form-contro input::placeholder {
-    color: var(--dark-text-color);
+    color: rgb(238, 238, 238);
 }
 .filter .form-contro input.light-theme {
     background-color: var(--header-light-bg);
@@ -176,6 +176,20 @@ img {
 }
 .gridData img {
     border-radius: 5px;
+}
+.country-name {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 1em;
+}
+
+.country-name img {
+    width: 50%;
+}
+.head a {
+    color: white;
+    font-size: 2rem;
+    font-weight: 900;
 }
 @media (min-width: 640px) {
     .grids {
